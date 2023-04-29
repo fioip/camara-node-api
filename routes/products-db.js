@@ -14,7 +14,7 @@ const pool = mysql.createPool({
   host: "localhost",
   user: "root",
   password: "",
-  database: "teams"
+  database: "products"
 });
 
 function getConnection(res) {
@@ -39,7 +39,7 @@ function getConnection(res) {
 }
 
 /**
- * run this before first USAGE to create teams TABLE
+ * run this before first USAGE to create products TABLE
  */
 router.get("/install", async function (req, res, next) {
   try {
@@ -61,7 +61,7 @@ router.get("/install", async function (req, res, next) {
 router.get("/", async function (req, res, next) {
   try {
     const connection = await getConnection(res);
-    const sql = `SELECT id, promotion, members, name, url FROM teams`;
+    const sql = `SELECT id, promotion, members, name, url FROM products`;
     connection.query(sql, function (err, results) {
       if (err) {
         console.error(err);
@@ -86,7 +86,7 @@ router.post("/create", async function (req, res, next) {
 
   try {
     const connection = await getConnection(res);
-    const sql = `INSERT INTO teams (id, promotion, members, name, url) VALUES (NULL, ?, ?, ?, ?);`;
+    const sql = `INSERT INTO products (id, promotion, members, name, url) VALUES (NULL, ?, ?, ?, ?);`;
     connection.query(sql, [promotion, members, name, url], function (err, results) {
       if (err) throw err;
       const id = results.insertId;
@@ -107,7 +107,7 @@ router.delete("/delete", async function (req, res, next) {
 
   try {
     const connection = await getConnection(res);
-    const sql = `DELETE FROM teams WHERE id=?`;
+    const sql = `DELETE FROM products WHERE id=?`;
     connection.query(sql, [id], function (err, results) {
       if (err) throw err;
       connection.release();
@@ -128,7 +128,7 @@ router.put("/update", async function (req, res, next) {
 
   try {
     const connection = await getConnection(res);
-    const sql = `UPDATE teams SET promotion=?, members=?, name=?, url=? WHERE id=?`;
+    const sql = `UPDATE products SET promotion=?, members=?, name=?, url=? WHERE id=?`;
     connection.query(sql, [promotion, members, name, url, id], function (err, results) {
       if (err) throw err;
       connection.release();

@@ -2,11 +2,6 @@
 
 Node JS CRUD API Example
 
-- [x] store info in [JSON file](data/teams.json)
-- [x] store info in DB [MySQL](https://www.mysql.com/)
-- [ ] store info in file similar to mongo format (check https://github.com/sergeyksv/tingodb)
-- [x] UI Example for this app can be found in [nmatei/teams-networking](https://github.com/nmatei/teams-networking)
-
 ## Table of Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -22,7 +17,7 @@ Node JS CRUD API Example
 ## Install
 
 ```sh
-git clone https://github.com/nmatei/node-api.git
+git clone
 cd node-api
 npm install
 ```
@@ -39,19 +34,19 @@ Open http://localhost:3000 to see if it works
 
 ## JSON file as storage
 
-Team members are stored inside [data/teams.json](data/teams.json)
+Products are stored inside [data/products.json](data/products.json)
 
 ```js
-// GET teams-json
-fetch("http://localhost:3000/teams-json", {
+// GET products-json
+fetch("http://localhost:3000/products-json", {
   method: "GET",
   headers: {
     "Content-Type": "application/json"
   }
 });
 
-// POST teams-json/create
-fetch("http://localhost:3000/teams-json/create", {
+// POST products-json/create
+fetch("http://localhost:3000/products-json/create", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -60,12 +55,12 @@ fetch("http://localhost:3000/teams-json/create", {
     promotion: "WON3",
     members: "Your Name",
     name: "CV",
-    url: "https://github.com/nmatei/teams-networking"
+    url: "https://github.com/nmatei/products-networking"
   })
 });
 
-// DELETE teams-json/delete
-fetch("http://localhost:3000/teams-json/delete", {
+// DELETE products-json/delete
+fetch("http://localhost:3000/products-json/delete", {
   method: "DELETE",
   headers: {
     "Content-Type": "application/json"
@@ -73,8 +68,8 @@ fetch("http://localhost:3000/teams-json/delete", {
   body: JSON.stringify({ id: "fedcba1610309909431" })
 });
 
-// PUT teams-json/update
-fetch("http://localhost:3000/teams-json/update", {
+// PUT products-json/update
+fetch("http://localhost:3000/products-json/update", {
   method: "PUT",
   headers: {
     "Content-Type": "application/json"
@@ -84,17 +79,7 @@ fetch("http://localhost:3000/teams-json/update", {
     promotion: "WON3",
     members: "UpdatedName",
     name: "Name",
-    url: "https://github.com/nmatei/teams-networking"
+    url: "https://github.com/nmatei/products-networking"
   })
 });
 ```
-
-## DB (MySQL) as storage
-
-Team members are stored in [MySQL](https://www.mysql.com/)
-
-- configure user & pass for mysql connection [routes/teams-db.js](routes/teams-db.js)
-- create a database named **teams**
-- run [http://localhost:3000/teams/install](http://localhost:3000/teams/install)
-- now you can run all CRUD operations
-  - the same as for json but change url **"teams-json" -> "teams"**

@@ -2,38 +2,38 @@ var express = require("express");
 var router = express.Router();
 var fs = require("fs");
 
-const DATA_PATH = "data/teams.json";
+const DATA_PATH = "data/products.json";
 
 /**
  *
  */
 router.get("/", function (req, res, next) {
   console.log("reading file %o", DATA_PATH);
-  const teams = getTeams();
-  res.json(teams);
+  const products = getProducts();
+  res.json(products);
 });
 
 /**
  *
  */
 router.post("/create", function (req, res, next) {
-  const promotion = req.body.promotion;
-  const members = req.body.members;
   const name = req.body.name;
-  const url = req.body.url;
+  const category = req.body.category;
+  const allergens = req.body.allergens;
+  const measureUnit = req.body.measureUnit;
 
-  const teams = getTeams();
+  const products = getProducts();
   const id = Math.random().toString(36).substring(7) + new Date().getTime();
 
-  teams.push({
+  products.push({
     id,
-    promotion,
-    members,
     name,
-    url
+    category,
+    allergens,
+    measureUnit
   });
 
-  setTeams(teams);
+  setProducts(products);
 
   res.json({ success: true, id });
   res.status(201);
@@ -45,9 +45,9 @@ router.post("/create", function (req, res, next) {
 router.delete("/delete", function (req, res, next) {
   const id = req.body.id;
 
-  const teams = getTeams().filter(team => team.id != id);
+  const products = getProducts().filter(product => product.id != id);
 
-  setTeams(teams);
+  setProducts(products);
 
   res.json({ success: true });
 });
@@ -57,33 +57,33 @@ router.delete("/delete", function (req, res, next) {
  */
 router.put("/update", function (req, res, next) {
   const id = req.body.id;
-  const promotion = req.body.promotion;
-  const members = req.body.members;
   const name = req.body.name;
-  const url = req.body.url;
+  const category = req.body.category;
+  const allergens = req.body.allergens;
+  const measureUnit = req.body.measureUnit;
 
-  const teams = getTeams();
+  const products = getProducts();
 
-  const team = teams.find(team => team.id == id);
-  if (team) {
-    team.promotion = promotion;
-    team.members = members;
-    team.name = name;
-    team.url = url;
+  const product = products.find(product => product.id == id);
+  if (product) {
+    product.name = name;
+    product.category = category;
+    product.allergens = allergens;
+    product.measureUnit = measureUnit;
   }
 
-  setTeams(teams);
+  setProducts(products);
 
   res.json({ success: true });
 });
 
-function getTeams() {
+function getProducts() {
   const content = fs.readFileSync(DATA_PATH);
   return JSON.parse(content);
 }
 
-function setTeams(teams) {
-  const content = JSON.stringify(teams, null, 2);
+function setProducts(products) {
+  const content = JSON.stringify(products, null, 2);
   fs.writeFileSync(DATA_PATH, content);
 }
 
