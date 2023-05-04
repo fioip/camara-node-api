@@ -21,6 +21,7 @@ router.post("/create", function (req, res, next) {
   const category = req.body.category;
   const allergens = req.body.allergens;
   const measureUnit = req.body.measureUnit;
+  const quantity = req.body.quantity;
 
   const products = getProducts();
   const id = Math.random().toString(36).substring(7) + new Date().getTime();
@@ -30,7 +31,8 @@ router.post("/create", function (req, res, next) {
     name,
     category,
     allergens,
-    measureUnit
+    measureUnit,
+    quantity
   });
 
   setProducts(products);
@@ -61,6 +63,7 @@ router.put("/update", function (req, res, next) {
   const category = req.body.category;
   const allergens = req.body.allergens;
   const measureUnit = req.body.measureUnit;
+  const quantity = req.body.quantity;
 
   const products = getProducts();
 
@@ -70,6 +73,7 @@ router.put("/update", function (req, res, next) {
     product.category = category;
     product.allergens = allergens;
     product.measureUnit = measureUnit;
+    product.quantity = quantity;
   }
 
   setProducts(products);

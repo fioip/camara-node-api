@@ -61,7 +61,7 @@ router.get("/install", async function (req, res, next) {
 router.get("/", async function (req, res, next) {
   try {
     const connection = await getConnection(res);
-    const sql = `SELECT id, promotion, members, name, url FROM products`;
+    const sql = `SELECT id, name, category, allergens, measureUnit, quantity FROM products`;
     connection.query(sql, function (err, results) {
       if (err) {
         console.error(err);
@@ -79,23 +79,28 @@ router.get("/", async function (req, res, next) {
  *
  */
 router.post("/create", async function (req, res, next) {
-  const promotion = req.body.promotion;
-  const members = req.body.members;
   const name = req.body.name;
-  const url = req.body.url;
+  const category = req.body.category;
+  const allergens = req.body.allergens;
+  const measureUnit = req.body.measureUnit;
+  const quantity = req.body.quantity;
 
   try {
     const connection = await getConnection(res);
-    const sql = `INSERT INTO products (id, promotion, members, name, url) VALUES (NULL, ?, ?, ?, ?);`;
-    connection.query(sql, [promotion, members, name, url], function (err, results) {
-      if (err) throw err;
-      const id = results.insertId;
-      connection.release();
-      res.json({
-        success: true,
-        id
-      });
-    });
+    const sql = `INSERT INTO products (id, name, category, allergens, measureUnit, quantity) VALUES (NULL, ?, ?, ?, ?, ?);`;
+    connection.query(
+      sql,
+      [name, category, allergens, measureUnit, quantity],
+      function (err, results) {
+        if (err) throw err;
+        const id = results.insertId;
+        connection.release();
+        res.json({
+          success: true,
+          id
+        });
+      }
+    );
   } catch (err) {}
 });
 
@@ -121,19 +126,24 @@ router.delete("/delete", async function (req, res, next) {
  */
 router.put("/update", async function (req, res, next) {
   const id = req.body.id;
-  const members = req.body.members;
   const name = req.body.name;
-  const url = req.body.url;
-  const promotion = req.body.promotion;
+  const category = req.body.category;
+  const allergens = req.body.allergens;
+  const measureUnit = req.body.measureUnit;
+  const quantity = req.body.quantity;
 
   try {
     const connection = await getConnection(res);
     const sql = `UPDATE products SET promotion=?, members=?, name=?, url=? WHERE id=?`;
-    connection.query(sql, [promotion, members, name, url, id], function (err, results) {
-      if (err) throw err;
-      connection.release();
-      res.json({ success: true });
-    });
+    connection.query(
+      sql,
+      [id, name, category, allergens, measureUnit, quantity],
+      function (err, results) {
+        if (err) throw err;
+        connection.release();
+        res.json({ success: true });
+      }
+    );
   } catch (err) {}
 });
 
