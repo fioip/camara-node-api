@@ -52,10 +52,11 @@ fetch("http://localhost:3000/products-json/create", {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
-    promotion: "WON3",
-    members: "Your Name",
-    name: "CV",
-    url: "https://github.com/nmatei/products-networking"
+    name: "porumb",
+    category: "conserve",
+    allergens: "nu",
+    measureUnit: "grame",
+    quantity: "200"
   })
 });
 
@@ -76,10 +77,11 @@ fetch("http://localhost:3000/products-json/update", {
   },
   body: JSON.stringify({
     id: "fedcba1610310163146",
-    promotion: "WON3",
-    members: "UpdatedName",
-    name: "Name",
-    url: "https://github.com/nmatei/products-networking"
+    name: "porumb",
+    category: "conserve",
+    allergens: "nu",
+    measureUnit: "grame",
+    quantity: "200"
   })
 });
 ```
