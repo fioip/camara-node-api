@@ -82,8 +82,8 @@ router.post("/create", async function (req, res, next) {
   const name = req.body.name;
   const category = req.body.category;
   const allergens = req.body.allergens;
-  const measureUnit = req.body.measureUnit;
   const weight = req.body.weight;
+  const measureUnit = req.body.measureUnit;
   const quantity = req.body.quantity;
 
   try {

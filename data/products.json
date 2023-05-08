@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "id": "os20lq1683508822763",
+    "name": "Farfalle",
+    "category": "Fainoase",
+    "allergens": "Gluten",
+    "measureUnit": "g",
+    "quantity": "2"
+  },
+  {
+    "id": "2xykhk1683509301861",
+    "name": "Penne",
+    "category": "Fainoase",
+    "allergens": "Gluten",
+    "measureUnit": "g",
+    "quantity": "2"
+  },
+  {
+    "id": "u22ndu1683509345761",
+    "name": "Taglitelle",
+    "category": "Fainoase",
+    "allergens": "Gluten",
+    "weight": "500",
+    "measureUnit": "g",
+    "quantity": "3"
+  }
+]
