@@ -20,6 +20,7 @@ router.post("/create", function (req, res, next) {
   const name = req.body.name;
   const category = req.body.category;
   const allergens = req.body.allergens;
+  const weight = req.body.weight;
   const measureUnit = req.body.measureUnit;
   const quantity = req.body.quantity;
 
@@ -31,6 +32,7 @@ router.post("/create", function (req, res, next) {
     name,
     category,
     allergens,
+    weight,
     measureUnit,
     quantity
   });
@@ -62,6 +64,7 @@ router.put("/update", function (req, res, next) {
   const name = req.body.name;
   const category = req.body.category;
   const allergens = req.body.allergens;
+  const weight = req.body.weight;
   const measureUnit = req.body.measureUnit;
   const quantity = req.body.quantity;
 
@@ -72,6 +75,7 @@ router.put("/update", function (req, res, next) {
     product.name = name;
     product.category = category;
     product.allergens = allergens;
+    product.weight = weight;
     product.measureUnit = measureUnit;
     product.quantity = quantity;
   }

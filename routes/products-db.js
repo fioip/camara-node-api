@@ -61,7 +61,7 @@ router.get("/install", async function (req, res, next) {
 router.get("/", async function (req, res, next) {
   try {
     const connection = await getConnection(res);
-    const sql = `SELECT id, name, category, allergens, measureUnit, quantity FROM products`;
+    const sql = `SELECT id, name, category, allergens, weight, measureUnit, quantity FROM products`;
     connection.query(sql, function (err, results) {
       if (err) {
         console.error(err);
@@ -83,14 +83,15 @@ router.post("/create", async function (req, res, next) {
   const category = req.body.category;
   const allergens = req.body.allergens;
   const measureUnit = req.body.measureUnit;
+  const weight = req.body.weight;
   const quantity = req.body.quantity;
 
   try {
     const connection = await getConnection(res);
-    const sql = `INSERT INTO products (id, name, category, allergens, measureUnit, quantity) VALUES (NULL, ?, ?, ?, ?, ?);`;
+    const sql = `INSERT INTO products (id, name, category, allergens, weight, measureUnit, quantity) VALUES (NULL, ?, ?, ?, ?, ?, ?);`;
     connection.query(
       sql,
-      [name, category, allergens, measureUnit, quantity],
+      [name, category, allergens, weight, measureUnit, quantity],
       function (err, results) {
         if (err) throw err;
         const id = results.insertId;
@@ -129,6 +130,7 @@ router.put("/update", async function (req, res, next) {
   const name = req.body.name;
   const category = req.body.category;
   const allergens = req.body.allergens;
+  const weight = req.body.weight;
   const measureUnit = req.body.measureUnit;
   const quantity = req.body.quantity;
 
@@ -137,7 +139,7 @@ router.put("/update", async function (req, res, next) {
     const sql = `UPDATE products SET promotion=?, members=?, name=?, url=? WHERE id=?`;
     connection.query(
       sql,
-      [id, name, category, allergens, measureUnit, quantity],
+      [id, name, category, allergens, weight, measureUnit, quantity],
       function (err, results) {
         if (err) throw err;
         connection.release();
