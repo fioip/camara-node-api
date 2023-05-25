@@ -5,7 +5,8 @@
     "category": "Fainoase",
     "allergens": "Gluten",
     "measureUnit": "g",
-    "quantity": "2"
+    "quantity": "100",
+    "weight": "200"
   },
   {
     "id": "2xykhk1683509301861",
@@ -13,7 +14,8 @@
     "category": "Fainoase",
     "allergens": "Gluten",
     "measureUnit": "g",
-    "quantity": "2"
+    "quantity": "2",
+    "weight": "500"
   },
   {
     "id": "u22ndu1683509345761",
@@ -23,5 +25,167 @@
     "weight": "500",
     "measureUnit": "g",
     "quantity": "3"
+  },
+  {
+    "id": "bdk1y1684569901987",
+    "name": "Fussili",
+    "category": "Fainoase",
+    "allergens": "Gluten",
+    "weight": "500",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "qmwhjt1684569923483",
+    "name": "Gnochi",
+    "category": "Fainoase",
+    "allergens": "Gluten",
+    "weight": "500",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "ijct7l1684573861059",
+    "name": "",
+    "category": "",
+    "allergens": "",
+    "weight": "",
+    "measureUnit": "",
+    "quantity": "0"
+  },
+  {
+    "id": "5ejc6p1684935693709",
+    "name": "Mazare",
+    "category": "Conserve",
+    "allergens": "nu",
+    "weight": "500",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "mfunxc1685000513523",
+    "name": "Porumb",
+    "category": "Conserve",
+    "allergens": "nu",
+    "weight": "250",
+    "measureUnit": "g",
+    "quantity": "3"
+  },
+  {
+    "id": "0pk4lk1685000562023",
+    "name": "Fasole",
+    "category": "Conserve",
+    "allergens": "nu",
+    "weight": "250",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "1dsw7j1685000600659",
+    "name": "Jeleuri",
+    "category": "Dulciuri",
+    "allergens": "nu",
+    "weight": "50",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "4h9ii71685000794891",
+    "name": "Ciocolata",
+    "category": "Dulciuri",
+    "allergens": "lactoza",
+    "weight": "100",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "avc4mx1685000838390",
+    "name": "Kinder Bueno",
+    "category": "Dulciuri",
+    "allergens": "lactoza",
+    "weight": "100",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "y9whlg1685000950748",
+    "name": "Biscuiti",
+    "category": "Dulciuri",
+    "allergens": "gluten",
+    "weight": "100",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "p89tsi1685001031197",
+    "name": "Castraveti murati",
+    "category": "Borcane",
+    "allergens": "nu",
+    "weight": "500",
+    "measureUnit": "g",
+    "quantity": "3"
+  },
+  {
+    "id": "11nx3h1685001071345",
+    "name": "Mustar",
+    "category": "Borcane",
+    "allergens": "nu",
+    "weight": "50",
+    "measureUnit": "g",
+    "quantity": "2"
+  },
+  {
+    "id": "bje0351685001104767",
+    "name": "Bulion",
+    "category": "Borcane",
+    "allergens": "nu",
+    "weight": "250",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "pof1j91685001135132",
+    "name": "Ardei iute",
+    "category": "Borcane",
+    "allergens": "nu",
+    "weight": "200",
+    "measureUnit": "g",
+    "quantity": "2"
+  },
+  {
+    "id": "oqz12m1685001184691",
+    "name": "Sare",
+    "category": "Condimente",
+    "allergens": "nu",
+    "weight": "50",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "in79ssg1685001208893",
+    "name": "Piper",
+    "category": "Condimente",
+    "allergens": "nu",
+    "weight": "30",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "0n3c3v1685001229534",
+    "name": "Boia",
+    "category": "Condimente",
+    "allergens": "nu",
+    "weight": "20",
+    "measureUnit": "g",
+    "quantity": "1"
+  },
+  {
+    "id": "xycu8d1685001256787",
+    "name": "Turmeric",
+    "category": "Condimente",
+    "allergens": "nu",
+    "weight": "20",
+    "measureUnit": "g",
+    "quantity": "1"
   }
 ]
